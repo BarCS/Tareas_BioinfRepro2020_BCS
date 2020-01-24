@@ -1,0 +1,38 @@
+---
+title: "ScriptTarea3.4"
+output: html_document
+---
+
+Se siguen las indicaciones para el ejercicio
+
+```{r}
+#Cargar librerias
+library(rmarkdown)
+```
+
+##Deben cargarse los datos
+#informacion
+```{r}
+datos <- read.delim(file = "../data/reads.txt")
+
+```
+
+##Se colocan los títulos al gráfico y a cada eje, y colorear la librería
+#títulos e información
+```{r}
+barplot(datos$nreads, 
+        col=datos$Library,xlab= "Muestra", ylab= "nRead", 
+        main= "Datos por librerias")
+```
+
+## Cambio de color
+```{r}
+palette (c("#628c8e", "#484556", "#b6a7a9"))
+```
+
+## Vuelvo a llamar a la gráfica para que se expresen los colores
+```{r}
+barplot(datos$nreads, 
+        col=datos$Library,xlab= "Muestra", ylab= "nRead", 
+        main= "Datos por librerias")
+```
